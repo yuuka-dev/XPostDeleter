@@ -1,0 +1,40 @@
+# --- 仮想環境 ---
+.venv/
+
+# --- Python キャッシュ ---
+__pycache__/
+*.py[cod]
+*.pyo
+
+# --- 個人データ・プライバシー ---
+# 自分の顔写真
+reference_media/**
+# Xアーカイブ本体
+XArchive/**
+# Chromeプロファイル
+ChromeUserData/**
+
+# --- 実行結果・ログ ---
+delete_hit_list.csv
+delete_hit_list_bak.csv
+rt_hit_list.csv
+click_statistics.csv
+*.log
+*.log.*
+
+# --- 環境設定 ---
+.env
+keywords.json
+
+# --- ChromeDriver（各自インストール）---
+chromedriver.exe
+chromedriver
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+
+.DS_Store
+.claude/
+.ruff_cache/

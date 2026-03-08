@@ -1,0 +1,30 @@
+# ==========================================================
+# Ruff: 静的解析 & 整形の設定 (Chip Konfigurasi)
+# ==========================================================
+[tool.ruff]
+# チェック対象のディレクトリ（受容体の範囲）
+src = ["src"]
+# 1行の長さ（半減期：現代のディスプレイなら88〜100が主流）
+line-length = 120
+
+[tool.ruff.lint]
+# 使用するルールセット（トリアージ）
+# E: pycodestyle (Error), F: Pyflakes, I: isort (Import順), B: bugbear (バグ予備軍)
+select = ["E", "F", "I", "B", "UP", "N"]
+# 自動修正（オートリペア）を許可するルール
+fixable = ["ALL"]
+# 敢えて無視する禁忌（例えば「命名規則にうるせー！」って時はここに足す）
+ignore = [
+    "D100", "D101",
+    "N812",   # expected_conditions as EC はseleniumの慣例
+]
+
+[tool.ruff.lint.isort]
+# インポート順序の正規化（副作用の防止）
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+
+[tool.ruff.format]
+# Black（整形ツール）互換の設定
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
